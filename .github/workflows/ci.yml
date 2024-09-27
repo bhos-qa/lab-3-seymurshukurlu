@@ -34,7 +34,10 @@ jobs:
           coverage xml
 
       - name: Upload coverage to SonarCloud
+        uses: sonarsource/sonarcloud-github-action@v3.0.0
+        with:
+          projectBaseDir: '.'
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-          sonar-scanner 
+        
+          
